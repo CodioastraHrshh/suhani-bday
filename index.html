@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Suhani 🎉</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #ffe6f0;
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-top: 20px;
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        from { color: #ff4d88; }
+        to { color: #ff99bb; }
+    }
+    .slideshow {
+        max-width: 90%;
+        margin: 20px auto;
+        position: relative;
+    }
+    .slides {
+        display: none;
+    }
+    .slides img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .caption {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #444;
+    }
+    .balloons {
+        margin-top: 40px;
+    }
+    .balloon {
+        display: inline-block;
+        width: 80px;
+        height: 100px;
+        background: radial-gradient(circle at 30% 30%, #ff6699, #cc3366);
+        border-radius: 50% 50% 50% 50%;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .balloon:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: #666;
+        transform: translateX(-50%);
+    }
+    .balloon:hover {
+        transform: scale(1.1);
+    }
+    .message {
+        display: none;
+        font-size: 1.5em;
+        margin-top: 40px;
+        animation: fadeIn 2s forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+</audio>
+<h1>🎉 Happy Birthday, Suhani! 🎉</h1><div class="slideshow">
+    <div class="slides">
+        <img src="photo1.jpg" alt="Slide 1">
+        <div class="caption">Tumhari muskaan sabka din bana deti hai 🌸</div>
+    </div>
+    <div class="slides">
+        <img src="photo2.jpg" alt="Slide 2">
+        <div class="caption">Tum ek positive vibe ho jo har jagah light le aati ho ✨</div>
+    </div>
+    <div class="slides">
+        <img src="photo3.jpg" alt="Slide 3">
+        <div class="caption">Tumhari simplicity hi tumhari beauty hai 💖</div>
+    </div>
+</div><div class="balloons">
+    <div class="balloon" onclick="popBalloon(this, 'Tum ek bohot rare soul ho, Suhani.')"></div>
+    <div class="balloon" onclick="popBalloon(this, 'Tumhari smile… kaafi logo ka din bana deti hai.')"></div>
+    <div class="balloon" onclick="popBalloon(this, 'Tum apne aas-paas positivity ka chhota sa universe banati ho.')"></div>
+    <div class="balloon" onclick="popBalloon(this, 'Tumhare saath moments… yaad ban jaate hain.')"></div>
+</div><div class="message" id="finalMessage">From Harsh — Keep Smiling Always 🤍</div><script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000);
+}
+
+let poppedCount = 0;
+function popBalloon(el, text) {
+    el.style.background = 'transparent';
+    el.innerHTML = `<span style='font-size:14px;color:#444;'>${text}</span>`;
+    poppedCount++;
+    if (poppedCount === document.getElementsByClassName('balloon').length) {
+        document.getElementById('finalMessage').style.display = 'block';
+    }
+}
+</script></body>
+</html>
